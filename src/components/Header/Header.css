@@ -2,7 +2,6 @@
   height: 15%;
   width: 100%;
   border: solid 3px black;
-  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
