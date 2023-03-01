@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Home.css'
 import Header from '../Header/Header'
+import ArticleCard from '../ArticleCard/ArticleCard'
 
 const Home = () => {
   const [articles, setArticles] = useState([])
@@ -12,6 +13,18 @@ const Home = () => {
     .then(response => response.json())
     .then(data => setArticles(data.results))
   }, [])
+
+  const allArticles = articles.map(article => {
+    return (
+      <ArticleCard
+        key={article.created_date}
+        sport={article.subsection}
+        story={article.abstract}
+        author={article.byline}
+        image={article.multimedia[0]}
+      />
+    )
+  })
 
   return (
     <section className='home-page'>
@@ -25,7 +38,7 @@ const Home = () => {
         </select>
       </form>
       <div className='article-container'>
-        <h1>Articles go here</h1>
+        {allArticles}
       </div>
     </section>
   )
