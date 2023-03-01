@@ -1,7 +1,16 @@
 .article-card {
   height: 30%;
   width: 80%;
-  border: solid 3px red;
+  display: flex;
+  flex-direction: row;
+  margin-top: 3%;
+  cursor: pointer;
+  border: solid 3px black;
+  box-shadow: 3px 3px 3px black;
+}
+
+.article-card:hover {
+  transform: scale(1.1);
 }
 
 .image-container {
@@ -12,4 +21,8 @@
 .info-container {
   height: 100%;
   width: 70%;
+}
+
+.article-image {
+  height: 100%;
 }
