@@ -1,11 +1,12 @@
 import React from 'react'
 import './Details.css'
 import Header from '../Header/Header'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 const Details = () => {
   const [currentArticle, setCurrentArticle] = useState({})
+  const [isLoading, setIsLoading] = useState(true)
   const { id } = useParams()
 
   useEffect(() => {
@@ -18,20 +19,32 @@ const Details = () => {
         return article.created_date === id
       })
       setCurrentArticle(newArticle)
+      setIsLoading(false)
     })
   }, [])
 
   return (
     <section className='details-page'>
+      {isLoading && <h1>Loading Article</h1>}
       <Header/>
+      {isLoading === true && <h1>Loading Article</h1>}
       <div className='article-title'>
-
+        <h1>{currentArticle.title}</h1>
+        <h3>{currentArticle.byLine}</h3>
       </div>
       <div className='article-details'>
-
+        <div className='image-container'>
+          {isLoading && <h1>Loading Article</h1>}
+          {!isLoading && <img className='current-image' src={currentArticle.multimedia[0].url} alt={"image of current article"}></img>}
+        </div>
+        <div className='story-container'>
+          <p>{currentArticle.abstract}</p>
+          <p>Link to NYT Article: </p>
+          <Link to={currentArticle.short_url}>Here</Link>
+        </div>
       </div>
       <div className='footer'>
-
+        
       </div>
     </section>
   )
