@@ -27,6 +27,7 @@ const Home = () => {
         story={article.abstract}
         author={article.byline}
         image={article.multimedia[0].url}
+        id={article.created_date}
       />
     )
   })
@@ -54,7 +55,6 @@ const Home = () => {
       setFilteredArticles(display)
     }
   }
-
 
   return (
     <section className='home-page'>

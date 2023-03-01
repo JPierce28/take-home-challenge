@@ -1,9 +1,10 @@
 import React from 'react'
 import './ArticleCard.css'
+import { Link } from 'react-router-dom'
 
-const ArticleCard = ({ sport, story, author, image }) => {
+const ArticleCard = ({ sport, story, author, image, id }) => {
   return (
-    <div className='article-card'>
+    <Link to={`/details/${id}`} className='article-card'>
       <div className='image-container'>
         <img className='article-image' src={image} alt={'Image of article'}></img>
       </div>
@@ -11,8 +12,8 @@ const ArticleCard = ({ sport, story, author, image }) => {
         <p>Sport: {sport}</p>
         <p>{story}</p>
         <p>{author}</p>
-      </div>
-    </div>
+     </div>
+    </Link>
   )
 }
 
