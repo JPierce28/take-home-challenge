@@ -19,6 +19,7 @@ const Home = () => {
     })
   }, [])
 
+
   const allArticles = filteredArticles.map(article => {
     return (
       <ArticleCard
