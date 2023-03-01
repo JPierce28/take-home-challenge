@@ -1,0 +1,14 @@
+.home-page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-container {
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  border: solid 2px blue;
+}
