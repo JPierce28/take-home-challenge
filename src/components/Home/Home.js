@@ -19,14 +19,16 @@ const Home = () => {
     })
   }, [])
 
+
   const allArticles = filteredArticles.map(article => {
     return (
       <ArticleCard
         key={article.created_date}
         sport={article.subsection}
-        story={article.abstract}
+        story={article.title}
         author={article.byline}
         image={article.multimedia[0].url}
+        id={article.created_date}
       />
     )
   })
@@ -54,7 +56,6 @@ const Home = () => {
       setFilteredArticles(display)
     }
   }
-
 
   return (
     <section className='home-page'>
