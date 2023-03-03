@@ -9,7 +9,7 @@ const Header = () => {
       {location.pathname === '/' && <h1>NYT Sports</h1>}
       {location.pathname !== '/' && 
       <Link to={'/'}>
-        <h1>Return Home</h1>
+        <h1 className='header-title'>Return Home</h1>
       </Link>}
     </div>
   )

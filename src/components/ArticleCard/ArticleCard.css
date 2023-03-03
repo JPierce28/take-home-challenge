@@ -8,6 +8,7 @@
   cursor: pointer;
   border: solid 3px black;
   box-shadow: 3px 3px 3px black;
+  color: black;
 }
 
 .article-card:hover {
@@ -26,4 +27,20 @@
 
 .article-image {
   height: 100%;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
 }
