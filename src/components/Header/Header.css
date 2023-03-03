@@ -1,9 +1,35 @@
 .global-header {
-  height: 15%;
+  height: 20vh;
   width: 100%;
   border: solid 3px black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: white;
+}
+
+.header-title:hover {
+  transform: scale(1.1);
+  text-decoration: none;
+}
+
+.header-title {
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
 }
