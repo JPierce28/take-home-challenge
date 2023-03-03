@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Home.css'
 import Header from '../Header/Header'
 import ArticleCard from '../ArticleCard/ArticleCard'

@@ -1,7 +1,7 @@
 import './Details.css'
 import Header from '../Header/Header'
 import { useParams, Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Details = () => {
   const [currentArticle, setCurrentArticle] = useState({})
