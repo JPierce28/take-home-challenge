@@ -19,6 +19,7 @@ const Home = () => {
     })
   }, [])
 
+  console.log(articles)
 
   const allArticles = filteredArticles.map(article => {
     return (
