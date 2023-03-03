@@ -1,9 +1,10 @@
 .global-header {
-  height: 15%;
+  height: 20vh;
   width: 100%;
   border: solid 3px black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: white;
 }

@@ -34,7 +34,7 @@ const Home = () => {
         sport={article.subsection}
         story={article.title}
         author={article.byline}
-        image={article.multimedia[0].url}
+        image={article.multimedia[2].url}
         id={article.created_date}
       />
     )

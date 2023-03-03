@@ -47,9 +47,6 @@ const Details = () => {
           <Link to={currentArticle.short_url}>Here</Link>
         </div>
       </div>
-      <div className='footer'>
-        
-      </div>
     </section>
   )
 }
