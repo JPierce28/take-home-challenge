@@ -6,6 +6,7 @@ import ArticleCard from '../ArticleCard/ArticleCard'
 const Home = () => {
   const [articles, setArticles] = useState([])
   const [filteredArticles, setFilteredArticles] = useState([])
+  const [errorMessage, setErrorMessage] = useState('')
   let allSports = []
 
   useEffect(() => {
@@ -14,12 +15,17 @@ const Home = () => {
     })
     .then(response => response.json())
     .then(data => {
+      if(data.results.length !== 0){
       setArticles(data.results)
       setFilteredArticles(data.results)
+      } else {
+        throw new Error("Something went wrong please refresh the page or try later...")
+      }
+    })
+    .catch(error => {
+        setErrorMessage("Something went wrong please refresh the page or try later...")
     })
   }, [])
-
-  console.log(articles)
 
   const allArticles = filteredArticles.map(article => {
     return (
@@ -62,6 +68,7 @@ const Home = () => {
     <section className='home-page'>
       <Header/>
       <header className='page-header'>
+        {errorMessage !== '' && <h1>{errorMessage}</h1>}
         <h1>Home</h1>
       </header>
       <h2>Filter By Sport</h2>

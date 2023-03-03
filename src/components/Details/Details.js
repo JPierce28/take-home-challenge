@@ -1,12 +1,12 @@
-import React from 'react'
 import './Details.css'
 import Header from '../Header/Header'
 import { useParams, Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Details = () => {
   const [currentArticle, setCurrentArticle] = useState({})
   const [isLoading, setIsLoading] = useState(true)
+  const [errorMessage, setErrorMessage] = useState('')
   const { id } = useParams()
 
   useEffect(() => {
@@ -21,12 +21,16 @@ const Details = () => {
       setCurrentArticle(newArticle)
       setIsLoading(false)
     })
+    .catch(error => {
+      setErrorMessage("Something went wrong please refresh the page or try later...")
+  })
   }, [])
 
   return (
     <section className='details-page'>
       {isLoading && <h1>Loading Article</h1>}
       <Header/>
+      {errorMessage !== '' && <h1>{errorMessage}</h1>}
       {isLoading === true && <h1>Loading Article</h1>}
       <div className='article-title'>
         <h1>{currentArticle.title}</h1>
