@@ -1,4 +1,3 @@
-import React from 'react'
 import './Details.css'
 import Header from '../Header/Header'
 import { useParams, Link } from 'react-router-dom'
@@ -23,7 +22,6 @@ const Details = () => {
       setIsLoading(false)
     })
     .catch(error => {
-      console.group(error)
       setErrorMessage("Something went wrong please refresh the page or try later...")
   })
   }, [])

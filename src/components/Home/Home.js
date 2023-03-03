@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Home.css'
 import Header from '../Header/Header'
 import ArticleCard from '../ArticleCard/ArticleCard'
@@ -23,7 +23,6 @@ const Home = () => {
       }
     })
     .catch(error => {
-        console.group(error)
         setErrorMessage("Something went wrong please refresh the page or try later...")
     })
   }, [])
